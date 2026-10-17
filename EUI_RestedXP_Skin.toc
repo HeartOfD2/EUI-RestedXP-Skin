@@ -1,0 +1,27 @@
+## Interface: 16001, 120000, 120001, 120005, 120007, 120100
+## Title: EUI RestedXP Skin
+## Title-deDE: EUI RestedXP Skin
+## Notes: RestedXP Guides in the EllesmereUI look, with an arrow fed by ShortestPathForever.
+## Notes-deDE: RestedXP Guides im EllesmereUI-Look, mit einem Pfeil auf Basis von ShortestPathForever.
+## Author: HeartOfD2
+## Version: 0.9.0
+## X-Website: https://github.com/HeartOfD2/EUI-RestedXP-Skin
+## Category: Miscellaneous
+## IconTexture: Interface\AddOns\EUI_RestedXP_Skin\Media\logo.tga
+## Dependencies: RXPGuides, EllesmereUI
+## OptionalDeps: ShortestPathForever, EllesmereUIBlizzardSkin
+## SavedVariables: EUIRestedXPSkinDB
+## AddonCompartmentFunc: EUIRestedXPSkin_OnCompartmentClick
+## AddonCompartmentFuncOnEnter: EUIRestedXPSkin_OnCompartmentEnter
+## AddonCompartmentFuncOnLeave: EUIRestedXPSkin_OnCompartmentLeave
+
+Locales\enUS.lua
+Locales\deDE.lua
+Core.lua
+Theme.lua
+GuideSkin.lua
+SPFBridge.lua
+Arrow.lua
+ArrowPreview.lua
+Options.lua
+Probe.lua

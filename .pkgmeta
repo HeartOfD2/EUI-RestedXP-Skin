@@ -1,0 +1,11 @@
+package-as: EUI_RestedXP_Skin
+
+ignore:
+  - docs
+  - .github
+  - .gitignore
+  - README.md
+
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown

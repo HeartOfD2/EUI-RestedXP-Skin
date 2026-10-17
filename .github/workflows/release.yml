@@ -1,0 +1,24 @@
+name: Release
+
+# Push a tag like v1.0.0 (or v0.9.0-beta for a beta) to build the package and
+# upload it to CurseForge and GitHub Releases.
+# Needs the repository secret CF_API_KEY and "## X-Curse-Project-ID: <id>" in the TOC.
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      CF_API_KEY: ${{ secrets.CF_API_KEY }}
+      GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Package and upload
+        uses: BigWigsMods/packager@v2
