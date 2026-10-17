@@ -41,7 +41,7 @@ RestedXP Guides 4.11.23, EllesmereUI 9.6 and ShortestPathForever 1.19.2.
 - English and German. The language follows "EUI Options Language" in the EllesmereUI global settings, otherwise the game client; any language other than German shows English.
 
 ### Known limitations
-- Only tested on the Forever beta. The Midnight (retail) interface numbers are listed in the TOC but untested.
+- Only tested on the Forever beta (Interface 16001); the TOC lists no other game version.
 - Not tested inside instances (the arrow switches off there by design).
 - With "lock boxes" on, RestedXP's window cannot be moved or resized during combat (protected boxes are
   anchored to it); height changes are applied after combat.

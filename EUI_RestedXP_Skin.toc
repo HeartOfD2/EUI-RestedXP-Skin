@@ -1,4 +1,4 @@
-## Interface: 16001, 120000, 120001, 120005, 120007, 120100
+## Interface: 16001
 ## Title: EUI RestedXP Skin
 ## Title-deDE: EUI RestedXP Skin
 ## Notes: RestedXP Guides in the EllesmereUI look, with an arrow fed by ShortestPathForever.
