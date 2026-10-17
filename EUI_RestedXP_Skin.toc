@@ -6,6 +6,7 @@
 ## Author: HeartOfD2
 ## Version: 0.9.0
 ## X-Website: https://github.com/HeartOfD2/EUI-RestedXP-Skin
+## X-Curse-Project-ID: 1751071
 ## Category: Miscellaneous
 ## IconTexture: Interface\AddOns\EUI_RestedXP_Skin\Media\logo.tga
 ## Dependencies: RXPGuides, EllesmereUI
