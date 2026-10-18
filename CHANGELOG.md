@@ -1,5 +1,21 @@
 # Changelog — EUI RestedXP Skin
 
+## 0.10.0 (beta)
+
+Tested on the World of Warcraft Forever beta (Interface 16001, German client) with ShortestPathForever 1.20.0.
+
+### ShortestPathForever: Journey and compass
+- The Journey section in the objective tracker column (ShortestPathForever's "Show journey in tracker") now looks
+  like the EllesmereUI quest tracker: section header in the accent colour with a thin accent line, journey title in
+  the quest title colour, steps in the quest tracker's font and grey, the current step in the accent colour, a
+  dark panel behind it (colour of the EllesmereUI quest tracker background, opacity adjustable).
+- The compass ("Show the compass" in ShortestPathForever) gets light ticks and letters in the EllesmereUI font,
+  north, the centre mark and the walking marks in the accent colour, and with a background the window colour and
+  a thin accent edge instead of black.
+- New options page Navigation › Journey; the Compass bar page gets "Restyle the compass" and "Show the time left
+  under the compass". Switching a skin off gives ShortestPathForever's own look back.
+- `/euirxp spf` shows whether the skin found ShortestPathForever's frames.
+
 ## 0.9.0 (beta)
 
 Tested on the World of Warcraft Forever beta (Interface 16001, build 70374, German client) with

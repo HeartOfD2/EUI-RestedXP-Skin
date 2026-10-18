@@ -9,7 +9,7 @@ local CONTENT_PAD = 45 -- EUI content padding
 -- Internal page ids -> visible (localized) names. Visible names must be unique per module.
 local PAGE_LABEL = {
     General = L["General"], Fonts = L["Fonts"], Colors = L["Colors"],
-    Arrow = L["Arrow"], Compass = L["Compass bar"], Map = L["Map"],
+    Arrow = L["Arrow"], Compass = L["Compass bar"], Journey = L["Journey"], Map = L["Map"],
 }
 local ID_BY_LABEL = {}
 for id, label in pairs(PAGE_LABEL) do ID_BY_LABEL[label] = id end
@@ -381,7 +381,38 @@ local function BuildCompass(W, parent, y)
     y = Pair(W, parent, y,
         SpfRow("compass", "toggle", "Show compass bar"),
         SpfRow("compassScale", "slider", "Compass size (%)", { min = 50, max = 200, step = 10 }))
-    y = Pair(W, parent, y, SpfRow("compassBackground", "slider", "Compass background (%)", { min = 0, max = 80, step = 10 }))
+    y = Pair(W, parent, y,
+        SpfRow("compassBackground", "slider", "Compass background (%)", { min = 0, max = 80, step = 10 }),
+        SpfRow("compassTime", "toggle", "Show the time left under the compass"))
+    y = y - (select(2, W:SectionHeader(parent, L["LOOK"], y)) or 0)
+    y = Pair(W, parent, y, Row("spfSkin", "compass", "toggle", "Restyle the compass", {
+        disabled = function() return not ns.SPF.Loaded() end, disabledTooltip = "ShortestPathForever is not loaded.",
+        tooltip = "Ticks, letters and the centre mark in the EllesmereUI look: accent colour for north, the centre and the walking marks, the EllesmereUI font, the window colour behind the band. Off gives ShortestPathForever's own look back.",
+    }))
+    return y
+end
+
+local function BuildJourney(W, parent, y)
+    local skin = function() return ns.db.spfSkin end
+    local noSkin = function() return not ns.SPF.Loaded() or not skin().journey end
+    y = y - (select(2, W:SectionHeader(parent, L["JOURNEY"], y)) or 0)
+    y = Pair(W, parent, y,
+        SpfRow("journeyTracker", "toggle", "Show journey in tracker", {
+            tooltip = "ShortestPathForever's Journey section in the objective tracker column: where you are going, the time left and each step.",
+        }),
+        Row("spfSkin", "journey", "toggle", "Restyle the journey", {
+            page = true, disabled = function() return not ns.SPF.Loaded() end, disabledTooltip = "ShortestPathForever is not loaded.",
+            tooltip = "The Journey section in the look of the EllesmereUI quest tracker: header in the accent colour with a thin line, its fonts and text colours, a dark panel behind it. Off gives ShortestPathForever's own look back.",
+        }))
+    y = Pair(W, parent, y,
+        Row("spfSkin", "journeyBackground", "slider", "Journey background (%)", {
+            min = 0, max = 100, step = 5, disabled = noSkin, disabledTooltip = "Switch on \"Restyle the journey\" first.",
+            tooltip = "Opacity of the panel behind the Journey. Its colour is the one of the EllesmereUI quest tracker, otherwise the window colour. 0 shows no panel.",
+        }),
+        Row("spfSkin", "currentAccent", "toggle", "Current step in the accent colour", {
+            disabled = noSkin, disabledTooltip = "Switch on \"Restyle the journey\" first.",
+            tooltip = "Off: the current step is white.",
+        }))
     return y
 end
 
@@ -405,7 +436,7 @@ end
 
 local BUILDERS = {
     General = BuildGeneral, Fonts = BuildFonts, Colors = BuildColors,
-    Arrow = BuildArrow, Compass = BuildCompass, Map = BuildMap,
+    Arrow = BuildArrow, Compass = BuildCompass, Journey = BuildJourney, Map = BuildMap,
 }
 
 local function BuildPage(pageName, parent, yOffset)
@@ -441,7 +472,7 @@ if EllesmereUI and type(EllesmereUI.RegisterPlugin) == "function" then
             {
                 key = "Nav", title = L["Navigation"],
                 description = L["Arrow and route. Route planning comes from ShortestPathForever, the EUI-style arrow from EUI RestedXP Skin."],
-                pages = PageNames({ "Arrow", "Compass", "Map" }),
+                pages = PageNames({ "Arrow", "Compass", "Journey", "Map" }),
                 buildPage = BuildPage,
                 getHeaderBuilder = function(pageName)
                     if ID_BY_LABEL[pageName] == "Arrow" then return ns.BuildArrowHeader end

@@ -4,7 +4,7 @@
 ## Notes: RestedXP Guides in the EllesmereUI look, with an arrow fed by ShortestPathForever.
 ## Notes-deDE: RestedXP Guides im EllesmereUI-Look, mit einem Pfeil auf Basis von ShortestPathForever.
 ## Author: HeartOfD2
-## Version: 0.9.0
+## Version: 0.10.0
 ## X-Website: https://github.com/HeartOfD2/EUI-RestedXP-Skin
 ## X-Curse-Project-ID: 1751071
 ## Category: Miscellaneous
@@ -24,5 +24,6 @@ GuideSkin.lua
 SPFBridge.lua
 Arrow.lua
 ArrowPreview.lua
+SPFSkin.lua
 Options.lua
 Probe.lua

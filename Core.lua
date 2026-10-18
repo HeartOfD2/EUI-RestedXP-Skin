@@ -28,6 +28,12 @@ ns.DEFAULTS = {
         showDistance = true, showETA = true, showName = true, unit = "m",
         hideCombat = false, locked = true, centerLock = false, point = { "TOP", "UIParent", "TOP", 0, -120 },
     },
+    spfSkin = {
+        journey = true, -- ShortestPathForever's Journey section in the tracker column in the EllesmereUI look
+        journeyBackground = 75, -- opacity (%) of the panel behind the Journey; 0 = none
+        currentAccent = true, -- the current journey step in the accent colour (off: white)
+        compass = true, -- ShortestPathForever's compass in the EllesmereUI look
+    },
 }
 
 local frame = CreateFrame("Frame")
@@ -128,6 +134,7 @@ function ns.ResetToDefaults()
     if ns.SPF then ns.SPF.RestoreAll() end
     ns.db.guide = DeepCopy(ns.DEFAULTS.guide)
     ns.db.nav = DeepCopy(ns.DEFAULTS.nav)
+    ns.db.spfSkin = DeepCopy(ns.DEFAULTS.spfSkin)
     ns.db.rxpArrowBackup = nil
     ns.RefreshAll()
 end
@@ -301,8 +308,10 @@ SlashCmdList["EUIRESTEDXPSKIN"] = function(msg)
         ns.SetArrowLocked(cmd == "lock")
     elseif cmd == "guide" then
         ns.GuideCommand(arg)
+    elseif cmd == "spf" then
+        ns.SPFSkinDebug()
     else
-        ns.Say(L["Usage: /euirxp [probe|nav|lock|unlock|guide]"])
+        ns.Say(L["Usage: /euirxp [probe|nav|lock|unlock|guide|spf]"])
     end
 end
 

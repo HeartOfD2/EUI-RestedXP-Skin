@@ -33,7 +33,7 @@ ShortestPathForever.
 |---|---|---|
 | RestedXP Guides | required | [CurseForge](https://www.curseforge.com/wow/addons/restedxp-guide) |
 | EllesmereUI | required | [CurseForge](https://www.curseforge.com/wow/addons/ellesmereui) |
-| ShortestPathForever | optional (route and transports for the arrow) | [CurseForge](https://www.curseforge.com/wow/addons/shortest-path-forever) |
+| ShortestPathForever | optional (route and transports for the arrow, Journey and compass skin) | [CurseForge](https://www.curseforge.com/wow/addons/shortest-path-forever) |
 
 EUI RestedXP Skin only loads when RestedXP Guides and EllesmereUI are both installed and enabled.
 Without ShortestPathForever the arrow points in a straight line to the step target.
@@ -48,6 +48,10 @@ Without ShortestPathForever the arrow points in a straight line to the step targ
   edge; an accent line shows where it will dock. They stay usable in combat.
 - **Navigation arrow** in four styles with distance, ETA and target name; states for travelling, transport
   (flight path, boat, zeppelin, lift, tram, portal, teleport) and arrival.
+- **ShortestPathForever's Journey and compass** in the EllesmereUI look: the Journey section of the objective
+  tracker matches the EllesmereUI quest tracker (accent header with a thin line, its fonts and colours, a dark
+  panel behind it, the current step in the accent colour); the compass gets accent ticks, centre mark and
+  walking marks, the EllesmereUI font and the window colour behind the band.
 - Optional: hide the window in combat and/or in instances, block RestedXP's guide window v2.
 - English and German.
 
@@ -61,6 +65,7 @@ right-click on the cog in the guide header, or from the addon compartment.
 | `/euirxp` | open the options |
 | `/euirxp lock` / `unlock` | lock or unlock the arrow for dragging |
 | `/euirxp probe` | print diagnostic information for bug reports |
+| `/euirxp spf` | show whether the Journey and compass skin found ShortestPathForever's frames |
 
 "Restyle RestedXP" off gives you RestedXP's own look back; "Reset to defaults" restores every value the skin
 changed in RestedXP and ShortestPathForever.

@@ -17,7 +17,7 @@ local keys = {
     "The EllesmereUI options are not available.",
     "The options cannot be opened in combat.",
     "The options could not be opened.",
-    "Usage: /euirxp [probe|nav|lock|unlock|guide]",
+    "Usage: /euirxp [probe|nav|lock|unlock|guide|spf]",
     "Click to open the options.",
     -- modules and pages
     "Guide window", "Navigation",
@@ -157,5 +157,24 @@ local keys = {
     "ROUTE SOURCE",
     "ShortestPathForever not found - the arrow points in a straight line.",
     "RestedXP step target (straight line)",
+    -- ShortestPathForever skin (journey and compass)
+    "Journey",
+    "JOURNEY",
+    "LOOK",
+    "Show the time left under the compass",
+    "Restyle the compass",
+    "Ticks, letters and the centre mark in the EllesmereUI look: accent colour for north, the centre and the walking marks, the EllesmereUI font, the window colour behind the band. Off gives ShortestPathForever's own look back.",
+    "Show journey in tracker",
+    "ShortestPathForever's Journey section in the objective tracker column: where you are going, the time left and each step.",
+    "Restyle the journey",
+    "The Journey section in the look of the EllesmereUI quest tracker: header in the accent colour with a thin line, its fonts and text colours, a dark panel behind it. Off gives ShortestPathForever's own look back.",
+    "Journey background (%)",
+    "Opacity of the panel behind the Journey. Its colour is the one of the EllesmereUI quest tracker, otherwise the window colour. 0 shows no panel.",
+    "Current step in the accent colour",
+    "Off: the current step is white.",
+    "Switch on \"Restyle the journey\" first.",
+    "Journey: frame %s, hooked %s, skin %s (option %s)",
+    "Compass: frame %s, hooked %s, skin %s (option %s)",
+    "EllesmereUI skinning available: %s, quest tracker settings found: %s",
 }
 for _, key in ipairs(keys) do L[key] = key end

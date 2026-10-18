@@ -270,6 +270,7 @@ local SPF_TYPE = {
     compassScale = "number", compassBackground = "number", mapPinScale = "number",
     transit = "boolean", portals = "boolean", mapFlightMasters = "boolean",
     flightPinScale = "number", minimapPinScale = "number", -- only where this SPF version has them (Write checks)
+    journeyTracker = "boolean", compassTime = "boolean",
 }
 
 local reloadHinted = false
