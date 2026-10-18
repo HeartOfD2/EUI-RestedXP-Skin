@@ -27,6 +27,10 @@ ShortestPathForever.
 
 ![arrow styles](docs/screenshots/09-arrow-styles.png)
 
+![options journey](docs/screenshots/10-options-journey.png)
+
+![journey and compass](docs/screenshots/11-journey-and-compass.jpg)
+
 ## Requirements
 
 | Addon | Needed | Download |
